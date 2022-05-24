@@ -8,10 +8,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Purchase = () => {
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
     const [part, setPart] = useState({});
     const { id } = useParams();
-    const [error, setError] = useState();
     useEffect(() => {
         const url = `http://localhost:5000/parts/${id.slice(1, id.length)}`;
         fetch(url)
@@ -21,7 +19,7 @@ const Purchase = () => {
     if (part === {}) {
         return <Loading></Loading>
     }
-    const { _id, img, name, minimumQuantity, description, availableQuantity, price } = part;
+    const { img, name, minimumQuantity, description, availableQuantity, price } = part;
     const handlePurchase = (event, part, user) => {
         event.preventDefault();
         const customerName = user.displayName;
@@ -32,7 +30,6 @@ const Purchase = () => {
         const quantity = event.target.quantity.value;
         const totalCost = parseInt(quantity) * part.price;
         const order = { customer, img, partName, address, totalCost, customerName };
-        console.log(order);
         fetch('http://localhost:5000/orders', {
             method: "POST",
             headers: {
@@ -46,7 +43,6 @@ const Purchase = () => {
                 if (data.success) {
                     toast('Order Placed Successfully!!')
                     event.target.reset();
-                    console.log(data);
                 }
                 else {
                     toast.error('Failed to place order.')
