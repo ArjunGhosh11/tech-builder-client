@@ -19,12 +19,12 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div>
+    <div className='p-15'>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
-        <Route path="/purchase" element={<Purchase />} />
+        <Route path="/purchase/:id" element={<Purchase />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>

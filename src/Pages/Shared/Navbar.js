@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComputer, faSolid } from '@fortawesome/free-solid-svg-icons'
+import { faComputer, faSolid } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -16,10 +16,11 @@ const Navbar = () => {
     };
 
     const menuItems = <>
-        <li className='font-bold'><Link to="/">Home</Link></li>
-        <li className='font-bold'><Link to="/appointment">Purchase</Link></li>
-        <li className='font-bold'><Link to="/blogs">Blogs</Link></li>
-        <li className='font-bold'><Link to="/myportfolio">My Portfolio</Link></li>
+
+        <li className='font-bold ml-5'><Link to="/">Home</Link></li>
+        <li className='font-bold ml-5'><Link to="/blogs">Blogs</Link></li>
+        <li className='font-bold ml-5'><Link to="/myPortfolio">My Portfolio</Link></li>
+
         {
             user && <li className='font-bold'><Link to="/dashboard">Dashboard</Link></li>
         }

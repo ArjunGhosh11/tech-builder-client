@@ -1,0 +1,29 @@
+[
+    {
+        "_id": 1,
+        "name": "Mother Board",
+        "price": 280,
+        "img": "https://i.ibb.co/hLDvwDM/mother-Board.png",
+        "description": "We manufacture authentic parts for computers and its very unlikely to to malfunction. In case of malfunction we will gladly replace products after through investigation. Please read out return policies.",
+        "minimumQuantity": 50,
+        "availableQuantity": 1000
+    },
+    {
+        "_id": 2,
+        "name": "Internal Hard Disk (1TB)",
+        "price": 150,
+        "img": "https://i.ibb.co/hLDvwDM/mother-Board.png",
+        "description": "We manufacture authentic parts for computers and its very unlikely to to malfunction. In case of malfunction we will gladly replace products after through investigation. Please read out return policies.",
+        "minimumQuantity": 100,
+        "availableQuantity": 1500
+    },
+    {
+        "_id": 3,
+        "name": "Power Supply",
+        "price": 100,
+        "img": "https://i.ibb.co/hLDvwDM/mother-Board.png",
+        "description": "We manufacture authentic parts for computers and its very unlikely to to malfunction. In case of malfunction we will gladly replace products after through investigation. Please read out return policies.",
+        "minimumQuantity": 50,
+        "availableQuantity": 1500
+    }
+]
