@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../Shared/Loading';
 import Review from './Review';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch("reviews.json")
+        fetch("http://localhost:5000/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
+
+    if (!reviews) {
+        return <Loading></Loading>
+    }
     return (
         <section className=''>
             <h2 className='text-accent font-bold text-left text-3xl' >REVIEWS</h2>

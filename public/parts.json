@@ -20,7 +20,7 @@
     {
         "_id": 3,
         "name": "Power Supply",
-        "price": 100,
+        "price": 120,
         "img": "https://i.ibb.co/hLDvwDM/mother-Board.png",
         "description": "We manufacture authentic parts for computers and its very unlikely to to malfunction. In case of malfunction we will gladly replace products after through investigation. Please read out return policies.",
         "minimumQuantity": 50,
