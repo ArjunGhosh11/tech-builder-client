@@ -17,6 +17,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import { ToastContainer } from 'react-toastify';
 import Footer from './Pages/Shared/Footer';
+import NotFound from './Pages/NotFound/NotFound';
+import RequireAuth from './Pages/Login/RequireAuth';
 
 function App() {
   return (
@@ -25,8 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
-        <Route path="/purchase/:id" element={<Purchase />} />
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/purchase/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
@@ -39,6 +41,7 @@ function App() {
         <Route path="myPortfolio" element={<MyPortfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
       <ToastContainer />
