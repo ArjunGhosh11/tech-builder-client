@@ -16,10 +16,11 @@ import SignUp from './Pages/Login/SignUp';
 import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import { ToastContainer } from 'react-toastify';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
-    <div className='p-15'>
+    <div className=''>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,6 +40,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );

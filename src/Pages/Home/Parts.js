@@ -9,7 +9,7 @@ const Parts = () => {
             .then(data => setParts(data))
     }, []);
     return (
-        <div className='flex flex-col items-center justify-center'>
+        <section className='flex flex-col items-center justify-center'>
             <h2 className='font-bold text-5xl text-center text-accent'>PARTS</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 my-10'>
                 {
@@ -19,7 +19,7 @@ const Parts = () => {
                     ></Part>)
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

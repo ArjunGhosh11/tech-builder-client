@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "name": "Tomas Shelby",
+        "place": "Dhaka",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 4,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    },
+    {
+        "_id": 2,
+        "name": "Alfie Solomons",
+        "place": "Tangail",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 3,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "Polly Grey",
+        "place": "Mumbai",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 5,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "Arthur Shelby",
+        "place": "New York",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 4,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "Arthur Shelby",
+        "place": "New York",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 4,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "Arthur Shelby",
+        "place": "New York",
+        "comment": "I am very pleased with the quality of the computer parts. I hope you all keep up the good work. Best of luck. Peace.",
+        "rating": 4,
+        "img": "https://i.ibb.co/N1fMK4L/tom.jpg"
+    }
+]

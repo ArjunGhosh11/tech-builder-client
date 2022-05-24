@@ -30,7 +30,7 @@ const BussinessSummary = () => {
         }
     ]
     return (
-        <div className='my-20 flex flex-col items-center justify-center'>
+        <section className='my-20 flex flex-col items-center justify-center'>
             <h2 className='text-accent font-bold text-center text-5xl'>BUILDING FOR MILLIONS OF TECH LOVERS</h2>
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-10 my-10'>
                 {
@@ -40,7 +40,7 @@ const BussinessSummary = () => {
                     ></BusinessInfo>)
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

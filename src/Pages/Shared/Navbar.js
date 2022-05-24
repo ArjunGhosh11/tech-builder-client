@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComputer, faSolid } from '@fortawesome/free-solid-svg-icons';
+import { faComputer } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -17,14 +17,14 @@ const Navbar = () => {
 
     const menuItems = <>
 
-        <li className='font-bold ml-5'><Link to="/">Home</Link></li>
-        <li className='font-bold ml-5'><Link to="/blogs">Blogs</Link></li>
-        <li className='font-bold ml-5'><Link to="/myPortfolio">My Portfolio</Link></li>
+        <li className='font-bold ml-5 text-xl'><Link to="/">Home</Link></li>
+        <li className='font-bold ml-5 text-xl'><Link to="/blogs">Blogs</Link></li>
+        <li className='font-bold ml-5 text-xl'><Link to="/myPortfolio">My Portfolio</Link></li>
 
         {
-            user && <li className='font-bold'><Link to="/dashboard">Dashboard</Link></li>
+            user && <li className='font-bold text-xl'><Link to="/dashboard">Dashboard</Link></li>
         }
-        <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link className='font-bold' to="/login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost text-xl" onClick={logout} >Sign Out</button> : <Link className='font-bold lg:text-xl sm:ml-5' to="/login">Login</Link>}</li>
     </>
     return (
         <div className="navbar bg-primary">
@@ -37,7 +37,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/home' className="pl-20 normal-case text-xl font-bold">Tech Builder <FontAwesomeIcon icon={faComputer} /></Link>
+                <Link to='/home' className="pl-20 normal-case text-3xl font-bold">Tech Builder <FontAwesomeIcon icon={faComputer} /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
