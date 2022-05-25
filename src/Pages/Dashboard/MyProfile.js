@@ -11,14 +11,14 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => setCurrentUser(data));
     }, [])
-    const handleSubmit = (event, user, id, role) => {
+    const handleSubmit = (event, user, _id, role) => {
         event.preventDefault();
         const name = user.displayName;
         const email = user.email;
         const location = event.target.location.value;
         const phone = event.target.phone.value;
         const social = event.target.socialProfile.value;
-        const updatedUser = { '_id': id, name, email, location, phone, social, role }
+        const updatedUser = { name, email, location, phone, social, role }
         console.log(updatedUser);
         // fetch(`https://shrouded-beach-53259.herokuapp.com/user/:${id}`, {
         //     method: 'PUT',
@@ -36,6 +36,24 @@ const MyProfile = () => {
         //             toast.error('Failed to Updated profile.')
         //         }
         //     })
+
+        fetch(`https://shrouded-beach-53259.herokuapp.com/orders/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(updatedUser)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    toast('Profile Updated Successfully!!')
+                    event.target.reset();
+                }
+                else {
+                    toast.error('Failed to Updated profile.')
+                }
+            })
     }
     return (
         <div className='p-12 mx-auto lg:w-[800px]'>
