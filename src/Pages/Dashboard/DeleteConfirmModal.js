@@ -4,21 +4,20 @@ import { toast } from 'react-toastify';
 const DeleteConfirmModal = ({ deletingPart, refetch, setDeletingPart }) => {
     const { _id, name } = deletingPart;
     const handleDelete = () => {
-        // fetch(`https://secret-dusk-46242.herokuapp.com/doctor/${email}`, {
-        //     method: 'DELETE',
-        //     headers: {
-        //         authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.deletedCount) {
-        //             toast.success(`Doctor: ${name} is deleted.`)
-        //             setDeletingDoctor(null);
-        //             refetch();
-        //         }
-        //     })
+        fetch(`http://localhost:5000/parts/${_id}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success(`Part: ${name} is deleted.`)
+                    setDeletingPart(null);
+                    refetch();
+                }
+            })
     }
     return (
         <div>

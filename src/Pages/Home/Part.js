@@ -19,7 +19,6 @@ const Part = ({ part }) => {
                     <p><small><strong>Price(per unit):</strong> ${price}</small></p>
                     <p><small><strong>Available Quantity:</strong> {availableQuantity}</small></p>
                     <p title={description}><small><strong>Description:</strong> {description.length > 100 ? description.slice(0, 100) + '...' : description}</small></p>
-                    <p><small><strong>Minimum Order Quantity:</strong> {minimumQuantity}</small></p>
                 </div>
                 <div class="card-actions">
                     <button onClick={() => navigateToPurchase(_id)} class="btn btn-primary">Purchase</button>

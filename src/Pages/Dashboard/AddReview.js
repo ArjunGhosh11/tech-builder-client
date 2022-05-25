@@ -18,7 +18,6 @@ const AddReview = () => {
         const img = event.target.img.value;
         const comment = event.target.comment.value;
         const review = { comment, name, place, rating, img }
-        console.log(review);
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
