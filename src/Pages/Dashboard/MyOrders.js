@@ -11,30 +11,30 @@ const MyAppointments = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     if (user) {
-    //         fetch(`http://localhost:5000/orders?customer=${user.email}`, {
-    //             method: 'GET',
-    //             headers: {
-    //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //             }
-    //         })
-    //             .then(res => {
-    //                 console.log('res', res);
-    //                 if (res.status === 401 || res.status === 403) {
-    //                     // signOut(auth);
-    //                     // localStorage.removeItem('accessToken');
-    //                     // navigate('/');
-    //                     console.log(res);
-    //                 }
-    //                 return res.json()
-    //             })
-    //             .then(data => {
-
-    //                 setOrders(data);
-    //             });
-    //     }
-    // }, [user])
+    useEffect(() => {
+        if (user) {
+            fetch(`http://localhost:5000/orders?customer=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        // signOut(auth);
+                        // localStorage.removeItem('accessToken');
+                        // navigate('/');
+                        console.log(res);
+                    }
+                    return res.json()
+                })
+                .then(data => {
+                    setOrders(data);
+                    console.log(data);
+                });
+        }
+    }, [user])
 
     if (!orders) {
         return <Loading></Loading>;
@@ -54,7 +54,7 @@ const MyAppointments = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
+                        {
                             orders.map((o, index) => <tr key={o._id}>
                                 <th>
                                     <div class="avatar">
@@ -74,7 +74,7 @@ const MyAppointments = () => {
                                     </div>}
                                 </td>
                             </tr>)
-                        } */}
+                        }
 
 
                     </tbody>
