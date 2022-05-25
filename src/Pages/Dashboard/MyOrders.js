@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import Loading from '../Shared/Loading';
 
-const MyAppointments = () => {
+const MyOrders = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
@@ -22,9 +22,9 @@ const MyAppointments = () => {
                 .then(res => {
                     console.log('res', res);
                     if (res.status === 401 || res.status === 403) {
-                        // signOut(auth);
-                        // localStorage.removeItem('accessToken');
-                        // navigate('/');
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
                         console.log(res);
                     }
                     return res.json()
@@ -84,4 +84,4 @@ const MyAppointments = () => {
     );
 };
 
-export default MyAppointments;
+export default MyOrders;
