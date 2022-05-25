@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading';
-import { useForm } from "react-hook-form";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast, ToastContainer } from 'react-toastify';
@@ -11,7 +10,7 @@ const Purchase = () => {
     const [part, setPart] = useState({});
     const { id } = useParams();
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${id.slice(1, id.length)}`;
+        const url = `https://shrouded-beach-53259.herokuapp.com/parts/${id.slice(1, id.length)}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPart(data));
@@ -32,7 +31,7 @@ const Purchase = () => {
         const paymentStatus = 'unpaid';
         const shipmentStatus = 'pending';
         const order = { shipmentStatus, customer, img, partName, address, totalCost, customerName, paymentStatus };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://shrouded-beach-53259.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -65,7 +64,6 @@ const Purchase = () => {
                             <p><small><strong>Price(per unit):</strong> ${price}</small></p>
                             <p><small><strong>Available Quantity:</strong> {availableQuantity}</small></p>
                             <p title={description}><small><strong>Description:</strong> {description}</small></p>
-                            <p><small><strong>Minimum Order Quantity:</strong> {minimumQuantity}</small></p>
                             <p><small><strong>Customer's Name:</strong> {user?.displayName}</small></p>
                             <p><small><strong>Customer's:</strong> {user?.email}</small></p>
                         </div>

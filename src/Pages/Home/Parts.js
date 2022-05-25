@@ -7,7 +7,7 @@ import Part from './Part';
 const Parts = () => {
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/parts')
+        fetch('https://shrouded-beach-53259.herokuapp.com/parts')
             // fetch('parts.json')
             .then(res => res.json())
             .then(data => setParts(data))
@@ -17,7 +17,7 @@ const Parts = () => {
         return <Loading></Loading>;
     }
 
-    // const { data, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/parts'))
+    // const { data, isLoading, refetch } = useQuery('parts', () => fetch('https://shrouded-beach-53259.herokuapp.com/parts'))
     console.log(parts);
 
     return (

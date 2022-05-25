@@ -7,7 +7,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [currentUser, setCurrentUser] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user.email}`)
+        fetch(`https://shrouded-beach-53259.herokuapp.com/user/${user.email}`)
             .then(res => res.json())
             .then(data => setCurrentUser(data));
     }, [])
@@ -20,7 +20,7 @@ const MyProfile = () => {
         const social = event.target.socialProfile.value;
         const updatedUser = { '_id': id, name, email, location, phone, social, role }
         console.log(updatedUser);
-        // fetch(`http://localhost:5000/user/:${id}`, {
+        // fetch(`https://shrouded-beach-53259.herokuapp.com/user/:${id}`, {
         //     method: 'PUT',
         //     headers: {
         //         'content-type': 'application/json'

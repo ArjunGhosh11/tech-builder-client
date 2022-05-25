@@ -18,7 +18,7 @@ const AddReview = () => {
         const img = event.target.img.value;
         const comment = event.target.comment.value;
         const review = { comment, name, place, rating, img }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://shrouded-beach-53259.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

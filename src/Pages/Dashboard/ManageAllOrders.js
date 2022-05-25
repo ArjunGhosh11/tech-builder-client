@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders`, {
+            fetch(`https://shrouded-beach-53259.herokuapp.com/orders`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

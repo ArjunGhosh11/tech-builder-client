@@ -7,7 +7,7 @@ import Part from './Part';
 const ManageProducts = () => {
     const [deletingPart, setDeletingPart] = useState(null);
 
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/parts', {
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://shrouded-beach-53259.herokuapp.com/parts', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

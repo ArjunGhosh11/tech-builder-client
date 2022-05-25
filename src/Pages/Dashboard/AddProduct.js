@@ -12,7 +12,7 @@ const AddProduct = () => {
         const minimumQuantity = event.target.minimumQuantity.value;
         const part = { name, price, img, description, availableQuantity, minimumQuantity }
         console.log(part);
-        fetch('http://localhost:5000/parts', {
+        fetch('https://shrouded-beach-53259.herokuapp.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
