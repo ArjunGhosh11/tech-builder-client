@@ -5,11 +5,12 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const Navbar = () => {
 
-    const [user, Loading] = useAuthState(auth);
-    if (Loading) {
+    const [user, loading] = useAuthState(auth);
+    if (loading) {
         return <Loading></Loading>;
     }
 
