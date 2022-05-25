@@ -33,9 +33,9 @@ const MyPortfolio = () => {
                     <hr />
                     <div className='flex flex-col font-bold '>
                         <h2 className='text-xl my-3'>LIST OF WEBSITES</h2>
-                        <a className='text-accent' target='_blank' href="https://tech-builder-49d52.web.app/">TECH BUILDER</a>
+                        {/* <a className='text-accent' target='_blank' href="https://tech-builder-49d52.web.app/">TECH BUILDER</a>
                         <a className='text-accent' target='_blank' href="https://assignment-11-281bf.firebaseapp.com/">TECH DOWN</a>
-                        <a className='text-accent' target='_blank' href="https://assignment-10-f82c0.web.app/">MEMORIES</a>
+                        <a className='text-accent' target='_blank' href="https://assignment-10-f82c0.web.app/">MEMORIES</a> */}
                     </div>
                 </div>
             </div>
