@@ -29,7 +29,8 @@ const Purchase = () => {
         const address = event.target.address.value;
         const quantity = event.target.quantity.value;
         const totalCost = parseInt(quantity) * part.price;
-        const order = { customer, img, partName, address, totalCost, customerName };
+        const paymentStatus = 'unpaid';
+        const order = { customer, img, partName, address, totalCost, customerName, paymentStatus };
         fetch('http://localhost:5000/orders', {
             method: "POST",
             headers: {
