@@ -1,23 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
-    const handleSubmit = (event, user) => {
+    const [currentUser, setCurrentUser] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${user.email}`)
+            .then(res => res.json())
+            .then(data => setCurrentUser(data));
+    }, [])
+    const handleSubmit = (event, user, id, role) => {
         event.preventDefault();
         const name = user.displayName;
         const email = user.email;
         const location = event.target.location.value;
         const phone = event.target.phone.value;
         const social = event.target.socialProfile.value;
-        const updatedUser = { name, email, location, phone, social }
+        const updatedUser = { '_id': id, name, email, location, phone, social, role }
         console.log(updatedUser);
+        // fetch(`http://localhost:5000/user/:${id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(updatedUser)
+        // }).then(res => res.json())
+        //     .then(data => {
+        //         if (data.success) {
+        //             toast('Profile Updated Successfully!!')
+        //             event.target.reset();
+        //         }
+        //         else {
+        //             toast.error('Failed to Updated profile.')
+        //         }
+        //     })
     }
     return (
         <div className='p-12 mx-auto lg:w-[800px]'>
             <h2 className='text-center text-2xl font-bold text-primary '>My Profile</h2>
-            <form onSubmit={(event) => handleSubmit(event, user)} className='bg-neutral  pl-10 p-10  rounded-2xl font-bold flex flex-col '>
+            <form onSubmit={(event) => handleSubmit(event, user, currentUser._id, currentUser.role)} className='bg-neutral  pl-10 p-10  rounded-2xl font-bold flex flex-col '>
                 <div className='flex flex-col w-full'>
                     <label className='text-white label-text ' htmlFor="name">Name</label>
                     <input type="text" name="name" id='name' disabled placeholder={user.displayName} className="w-full input input-bordered max-w-3xl mb-5" />
@@ -42,6 +65,7 @@ const MyProfile = () => {
                     <input className='w-full border border-3 text-center btn btn-primary text-white rounded-pill p-2 mb-3 bg-primary max-w-3xl fw-bolder' type="submit" value="UPDATE" />
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 };
