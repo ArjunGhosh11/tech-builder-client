@@ -40,7 +40,7 @@ const MyOrders = () => {
         return <Loading></Loading>;
     }
     return (
-        <div>
+        <div className='p-12'>
             <h2 className='text-center text-2xl font-bold text-primary'>MY ORDERS</h2>
             <div class="overflow-x-auto font-bold">
                 <table class="table w-full">
@@ -70,7 +70,8 @@ const MyOrders = () => {
                                     {(o.totalCost && (o.paymentStatus === 'unpaid')) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                     {(o.totalCost && (o.paymentStatus === 'paid')) && <div>
                                         <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{o.transactionId}</span></p>
+                                        <p>Transaction id: </p>
+                                        <p><span className='text-success'>{o.transactionId}</span></p>
                                     </div>}
                                 </td>
                             </tr>)
